@@ -54,4 +54,31 @@ input{
 .text{
     margin-top: 2rem ;
     text-align: center;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: transparent;
+    filter: blur(.3px);
+    opacity: .8;
+    padding: 10px;
+    
+   
+
+}
+.text2{
+    display: none;
+    margin-top: 2rem ;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: transparent;
+    filter: blur(.3px);
+    opacity: .8;
+    padding: 10px;
+
 }
