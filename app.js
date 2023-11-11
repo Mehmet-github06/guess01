@@ -14,20 +14,23 @@ console.log(random);
 
 check.addEventListener("click", () => {
   const guess = parseInt(input.value, 10);
+  click.play();
 
   if (isNaN(guess) || guess < 1 || guess > 100) {
-    text.textContent = "Lütfen 1 ile 100 arasında bir sayı girin!";
+    text.textContent = "Enter a number between 1 and 100!";
   } else {
     if (guess === random) {
-      text.textContent = "Tebrikler, doğru tahmin ettiniz! 👏";
+      text.textContent = "Congratulations, You Guess It Right! 👏";
+      win.play();
+    //   lose.pause();
       tekrar();
     } else if (guess < random) {
-      text.textContent = " 👆 Sayınızı Arttırın 👆";
+      text.textContent = " 👆Increase the number👆";
       first.textContent = guess;
       text2.style.display = "block";
       testNumber.textContent++;
     } else {
-      text.textContent = "👇 Sayınızı Azaltın 👇";
+      text.textContent = "👇Reduce the number👇";
       second.textContent = guess;
       text2.style.display = "block";
       testNumber.textContent++;
@@ -36,7 +39,8 @@ check.addEventListener("click", () => {
       scoreNumber.textContent--;
     } else if (scoreNumber.textContent == 1) {
       text.textContent = "😞GAME OVER😞";
-      tekrar()
+      tekrar();
+      lose.play();
     }
   }
 });
@@ -53,16 +57,15 @@ again.addEventListener("click", function () {
   random = Math.floor(Math.random() * 101);
   console.log(random);
   window.location.reload();
+  click.play();
 });
 
-
-let tekrar = () =>{
-    document.querySelector("h1").textContent="";
-    document.querySelector("h2").textContent="";
-    input.style.display="none";
-    check.style.display="none";
-    score.style.display="none";
-    again.style.display="block";
-    text2.style.display="none";
-
-}
+let tekrar = () => {
+  document.querySelector("h1").textContent = "";
+  document.querySelector("h2").textContent = "";
+  input.style.display = "none";
+  check.style.display = "none";
+  score.style.display = "none";
+  again.style.display = "block";
+  text2.style.display = "none";
+};
